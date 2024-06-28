@@ -32,7 +32,7 @@ exports.handleSubmit = async (req, res) => {
         !leaderPhone ||
         !leaderPhoneSecondary ||
         !leaderMail ||
-        !teammates|| !idea || !  currentStage
+        !teammates|| !idea || !currentStage
     ) {
         return res.status(400).json({
             success: false,
