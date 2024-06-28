@@ -9,6 +9,9 @@ exports.handleSubmit = async (req, res) => {
         leaderPhoneSecondary,
         leaderMail,
         teammates,
+        idea,
+        websiteLink,
+        currentStage
     } = req.body || req.query.params
 
     console.log(
@@ -17,7 +20,10 @@ exports.handleSubmit = async (req, res) => {
         leaderPhone,
         leaderPhoneSecondary,
         leaderMail,
-        teammates
+        teammates,
+        idea,
+        websiteLink,
+        currentStage
     )
 
     if (
@@ -26,7 +32,7 @@ exports.handleSubmit = async (req, res) => {
         !leaderPhone ||
         !leaderPhoneSecondary ||
         !leaderMail ||
-        !teammates
+        !teammates|| !idea || !  currentStage
     ) {
         return res.status(400).json({
             success: false,
@@ -41,6 +47,9 @@ exports.handleSubmit = async (req, res) => {
         leaderPhoneSecondary: leaderPhoneSecondary,
         leaderMail: leaderMail,
         teammates: teammates,
+        idea:idea,
+        currentStage:currentStage,
+        websiteLink:websiteLink
     }
 console.log(data)
     const result = await Form.create(data)

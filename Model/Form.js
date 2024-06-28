@@ -26,6 +26,18 @@ const formSchema = mongoose.Schema({
         type: Number,
         required: true,
     },
+    idea:{
+        type:String,
+        required:true
+    },
+    websiteLink:{
+        type:String
+       
+    },
+    currentStage:{
+        type:String,
+        required:true
+    }
 })
 
 
