@@ -1,9 +1,10 @@
 const mongoose= require("mongoose");
+const dotenv= require("dotenv").config()
 
 exports.connectDB=async(req,res)=>{
     try{
 
-        mongoose.connect("mongodb+srv://ecell:haO5O3k7ims3e8RN@ecellietdavv.vkcwuoe.mongodb.net/innovision")
+        mongoose.connect(process.env.MONGO_URL)
         .then(()=>console.log("DB connected Sucessfully"))
         .catch((error)=>console.log(error))
 
